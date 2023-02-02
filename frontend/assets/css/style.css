@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #cecece;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+nav {
+    background: #0e0d0d;
+    width: 100vw;
+    height: 70px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 13px #0e0d0d;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 25px;
+    margin: 0px 20px;
+}
+
+.navbar svg:hover {
+    transition: .15s all ease;
+    transform: scale(1.1);
+}
+
+.navbar-toggler {
+    position: relative;
+    width: 200px;
+    padding: 7px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-toggler:after {
+    content: " ";
+    position: absolute;
+    background-color: #ff7300;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.navbar-toggler:hover:after {
+    width: 100%;
+}
+
+.navbar-icon {
+    font-size: 20px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    color: white
+}
+
+.navbar-item a{
+    color: #ffffffce;
+    font-weight: 500;
+    position: relative;
+    left: -20px;
+}
+
+.navbar-item a:hover  {
+        transition-delay: 0.3s all ease;
+        color: #ffffff;
+}
+
+.navbar-item a:after {
+    content: " ";
+    position: absolute;
+    background-color: #ff7300;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -8px;
+    transition: 0.3s;
+}
+
+.navbar-item a:hover:after {
+    width: 100%;
+}
+
+/*Index*/
+
+.main-container {
+    margin-top: 40px;
+    height: calc(100vh - 70px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-container {
+    font-size: 50px;
+}
+
+.sub-title {
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 50px
+}
+
+.alert {
+    width: 40vw;
+    padding: 20px;
+    border-radius: 7px;     
+}
+
+.alert-danger {
+    background: rgba(250, 94, 128, 0.815);
+    color: rgb(121, 7, 32);
+}
+
+.table {
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529; 
+}
+
+.thead-primary {
+    background: #ff7300;
+    color:#ffffff;
+    font-size: 15px;
+}
+
+.table th,.table td {
+      padding: 0.75rem;
+      vertical-align: top;
+      border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+      vertical-align: bottom;
+      border-bottom: 2px solid #dee2e6; 
+      padding: 30px;
+      border-radius: 5px;
+}
+
+.table tbody + tbody {
+      border-top: 2px solid #dee2e6;
+    align-items: center;
+}
+
+.table tbody td {
+    padding: 30px;
+}
+
+.row-darklight {
+    background: #bfc0c2;
+}
+
+.edit_contact svg{
+    margin-left: 8px;
+    width: 50px;
+    height: 50px;
+}
+
+/*Page Login*/
+  
+.login-container {
+    width: 550px;
+    min-height: 680px;
+    background: #0e0d0d;
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+    margin: 4rem auto 0; /*Centralizando a div no meio da pagina*/
+    padding: 5rem 4rem 0 4rem; /*Centralizando a div no meio da pagina*/
+}
+
+.form-login {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.login-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5em;
+}
+
+.login-nav a {
+    position: relative;
+    color: #ffffffce;
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 20px;
+    transition: .20s all ease;
+}
+
+.login_item a:after {
+    content: "";
+    position: absolute;
+    background-color: #ff7300;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.login_item a:hover:after, .login_item.active a:after{
+    width: 100%;
+}
+
+.login_item.active a,
+.login_item a:hover {
+    color: #ffffff;
+	transition: .15s all ease;
+}
+
+.body_login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px
+}
+
+.body_login input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.login-button button {
+    padding: 20px;
+    width: 100%;
+    border: 2px solid #ffffffce;
+    border-radius: 10px;
+    background: transparent;
+
+    color: #ffffffce;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    transition: 0.15s all ease;
+}
+
+.login-button button:hover {
+    background: #ff7300;
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 0 5px #ff7300,
+                0 0 25px #ff7300,
+                0 0 50px #ff7300,
+                0 0 100px #ff7300;
+}
+
+.login__label {
+    color: #ff7300;
+}
+
+.login__checkbox {
+    display: flex;
+    gap: 10px;
+    color: #ffffffce;
+}
+
+.login__checkbox input{
+    width: 30px;
+    height: 20px;
+    margin: 0;
+}
+
+.forgot_password {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    color: #ffffffb7;
+    transition: 0.15s all ease;
+}
+
+.forgot_password:hover {
+    color: #ffffff;
+}
+
+/*Page 404*/
+
+.row {
+    background: #0e0d0d;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+.col-lg-8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: 'VT323';
+    font-size: 110px;
+}
+
+.cod-error {
+    font-size: 200px;
+    transition: 0.3s all ease-in-out;
+}
+
+.cod-error:hover {
+    color:#ff5e00;
+    transition-delay: 0.1s;
+    transform: translateY(-20px);
+}

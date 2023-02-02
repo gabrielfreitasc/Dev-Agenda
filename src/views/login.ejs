@@ -1,0 +1,31 @@
+<%- include('includes/head') %>
+  <div class="login-container">
+    <form action="/login/login" class="form-login" method="POST">
+      <ul class="login-nav">
+        <li class="login_item active">
+          <a href="#">Login</a>
+        </li>
+        <li class="login_item ">
+          <a class="teste" href="/register">Registrar</a>
+        </li>
+      </ul>
+      <ul class="body_login">
+        <label for="login-input-email" class="login__label">E-mail</label>
+        <input type="email" class="input_user" name="email">
+        <label for="login-input-password" class="login__label">Senha</label>
+        <input type="password" class="input_password" name="password">
+        <label for="login-input-checkbox" class="login__checkbox">
+        <input type="checkbox" class="input_checkbox">
+          Lembrar minha senha.
+        </label>
+      </ul>
+      <div  class="login-button">
+        <button type="submit">Login</button>
+      </div>
+
+    </form>
+    <a href="" class="forgot_password">Esqueceu sua senha?</a>
+
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">  <!--A cada reset na pagina, um novo token sera gerado, protegendo o form -->
+  </div>
+<%- include('includes/footer') %>

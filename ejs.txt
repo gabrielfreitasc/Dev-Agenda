@@ -1,0 +1,35 @@
+Injetando conteúdo nos views com EJS
+
+uso do EJS:
+
+<% Controle de fluxo (if, for, while...) %>
+<%= Imprime escapando caracteres %>  --> Vai mostrar
+<%- Imprime sem escapar caracteres %> --> Vai executar
+<%# Comentário %>
+<%- include('.caminho/arquivo') %>
+
+Controle de fluxo:
+
+<% if(argm) {%>
+  <%= exibir algo %>
+<%} else {%>
+  <%= exibir outra coisa %>
+<% } %>
+
+
+Security com Helmet e CSRF (evitando de programas ou pessoas maliciosas postem conteúdos no API)
+
+Instalação:
+  npm i helmet csurf
+
+  CSRF injeta um token(senha) em cada rota pra evitar posse de terceiros
+
+<--
+  O Helmet é para segurança da aplicação, portanto, caso você esteja com um sistema ainda em desenvolvimento, usando urls como "127.0.0.1",
+  "localhost" ou até um servidor com IP externo, sem usar SSL (https), é recomendável desativá-lo. Ele pode bloquear importação de scripts e 
+  arquivos de CSS.
+
+  Caso ocorra erros ao importar o bundle.js, arquivos de CDN (como bootstrap, por exemplo) ou CSS, basta desativar o helmet para correção.
+
+  Isso só ocorrerá em sistemas sem SSL (sem https na URL).
+<--
