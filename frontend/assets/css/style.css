@@ -58,6 +58,10 @@ nav {
     cursor: pointer;
 }
 
+.navbar-toggler a{
+    display: flex;
+}
+
 .navbar-toggler:after {
     content: " ";
     position: absolute;
@@ -81,6 +85,7 @@ nav {
 }
 
 .navbar-item a{
+    font-size: 18px;
     color: #ffffffce;
     font-weight: 500;
     position: relative;
@@ -128,16 +133,6 @@ nav {
     margin-bottom: 50px
 }
 
-.alert {
-    width: 40vw;
-    padding: 20px;
-    border-radius: 7px;     
-}
-
-.alert-danger {
-    background: rgba(250, 94, 128, 0.815);
-    color: rgb(121, 7, 32);
-}
 
 .table {
     margin-top: 50px;
@@ -188,15 +183,21 @@ nav {
   
 .login-container {
     width: 550px;
-    min-height: 680px;
+    min-height: 700px;
     background: #0e0d0d;
     box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
     margin: 4rem auto 0; /*Centralizando a div no meio da pagina*/
     padding: 5rem 4rem 0 4rem; /*Centralizando a div no meio da pagina*/
 }
 
+.login_register {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
 .form-login {
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -205,7 +206,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 5em;
+    margin-bottom: 30px;
 }
 
 .login-nav a {
@@ -316,6 +317,43 @@ nav {
     color: #ffffff;
 }
 
+/*Page Logged/Perfil*/
+
+.logged-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.perfil-container {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+.perfil-container h1 {
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+.perfil-container img {
+    filter: drop-shadow(8px 8px 10px #000000d9);
+}
+
+.image-right {
+    margin-top: 35px;
+}
+
+.image-right img {
+    width: 500px;
+    height: 500px;
+    filter: drop-shadow(8px 8px 10px #000000d9);
+}
+
 /*Page 404*/
 
 .row {
@@ -347,4 +385,41 @@ nav {
     color:#ff5e00;
     transition-delay: 0.1s;
     transform: translateY(-20px);
+}
+
+/*Messages Alert*/
+
+.row-alerts {
+    margin-bottom: 20px;
+}
+
+.alert {
+    width: 40vw;
+    padding: 20px;
+    border-radius: 7px;     
+}
+
+.alert-danger {
+    background: rgba(250, 94, 128, 0.815);
+    color: rgb(121, 7, 32);
+}
+
+.alert-success {
+    background: rgba(145, 255, 0, 0.815);
+    color: rgb(20, 121, 7);
+}
+
+
+.alert-danger_login {
+    width: 30vw;
+    margin-bottom: 10px;
+    background: rgba(250, 94, 128, 0.815);
+    color: rgb(121, 7, 32);
+}
+
+.alert-success_login {
+    width: 30vw;
+    margin-bottom: 10px;
+    background: rgba(145, 255, 0, 0.815);
+    color: rgb(20, 121, 7);
 }

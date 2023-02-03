@@ -1,0 +1,21 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<section class="logged">
+  <%- include('includes/messages-login')%>
+  <div class="logged-container">
+
+
+    <div class="perfil-container">
+      <h2>Olá Usuário </h2>
+      <img src="img/perfil.png" alt="">
+      <h1><%= user.email %></h1>
+      <p>Bem vindo ao seu perfil do Dev Agenda!</p>
+
+    </div>
+    <div class="image-right">
+      <img src="img/agendaVetor.svg" alt="">
+    </div>
+  </div>
+</section>
+<%- include('includes/footer') %>

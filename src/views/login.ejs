@@ -1,14 +1,19 @@
 <%- include('includes/head') %>
+<%- include('includes/nav-login') %>
+
+<section class="login_register">
   <div class="login-container">
     <form action="/login/login" class="form-login" method="POST">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">  <!--A cada reset na pagina, um novo token sera gerado, protegendo o form -->
       <ul class="login-nav">
         <li class="login_item active">
           <a href="#">Login</a>
         </li>
         <li class="login_item ">
-          <a class="teste" href="/register">Registrar</a>
+          <a class="teste" href="#">Registrar</a>
         </li>
       </ul>
+      <%- include('includes/messages-login') %>
       <ul class="body_login">
         <label for="login-input-email" class="login__label">E-mail</label>
         <input type="email" class="input_user" name="email">
@@ -25,7 +30,34 @@
 
     </form>
     <a href="" class="forgot_password">Esqueceu sua senha?</a>
-
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>">  <!--A cada reset na pagina, um novo token sera gerado, protegendo o form -->
   </div>
+
+  <div class="login-container">
+    <form action="/login/register" class="form-register" method="POST">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">  <!--A cada reset na pagina, um novo token sera gerado, protegendo o form -->
+      <ul class="login-nav">
+        <li class="login_item">
+          <a href="#">Login</a>
+        </li>
+        <li class="login_item  active">
+          <a class="teste" href="#">Registrar</a>
+        </li>
+      </ul>
+
+      <%- include('includes/messages-login') %>
+
+      <ul class="body_login">
+        <label for="login-input-user" class="login__label">E-mail</label>
+        <input type="email" class="input_user" name="email">
+        <label for="login-input-password" class="login__label">Senha</label>
+        <input type="password" class="input_password" name="password">
+        <label for="login-input-password" class="login__label">Confirme sua Senha</label>
+        <input type="password" class="input_password" name="countersing">
+      </ul>
+      <div  class="login-button">
+        <button type="submit">Registrar</button>
+      </div>
+    </form>
+  </div>
+</section>
 <%- include('includes/footer') %>
