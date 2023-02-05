@@ -1,7 +1,7 @@
 <h1 align="center">📙DEV AGENDA📙</h1>
 
 <p>
-    <img alt="Projeto Dev Experience" src="./public/img/preview.png" width="100%">
+    <img alt="Projeto Dev Experience" src="./public/img/preview.jpg" width="100%">
 </p>
 
 
