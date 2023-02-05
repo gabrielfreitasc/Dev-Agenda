@@ -23,6 +23,12 @@ Projeto de cadastro de contatos em sua agenda privada, com sistema de login e re
 
 - [Acesse o projeto finalizado, online](gabrielfreitasc.github.io/DevExperience/)
 
+## 🔑 Inicialização do Projeto
+    
+    Inicie o projeto no terminal: npm start
+    Inicie o webpack (configurações do css): npm run dev
+
 ---
+
 
 Feito com ❤ by Gabriel Freitas - Siga-me no [Linkedin](https://www.linkedin.com/in/gabriel-freitasdev/)
