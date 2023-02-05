@@ -2,11 +2,11 @@
 <%- include('includes/nav') %>
 
 <section class="logged">
-  <%- include('includes/messages-login')%>
+
   <div class="logged-container">
-
-
+    <div class="message_logged"><%- include('includes/messages-login')%></div>
     <div class="perfil-container">
+
       <h2>Olá Usuário </h2>
       <img src="img/perfil.png" alt="">
       <h1><%= user.email %></h1>

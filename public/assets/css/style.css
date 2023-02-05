@@ -508,3 +508,12 @@ nav {
 .empty_contacts {
     margin-left: 55px;
 }
+
+.error-text {
+    font-size: 12px;
+    color: red;
+  }
+
+.message_logged {
+    margin-top: 20px;
+}

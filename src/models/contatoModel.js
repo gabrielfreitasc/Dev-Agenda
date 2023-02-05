@@ -80,7 +80,7 @@ Contato.getContatos = async function() {
 
 Contato.delete = async function(id) {
     if(typeof id !== 'string') return;
-    const contato = await ContatoModel.findOneAndDelete({id: _id});
+    const contato = await ContatoModel.findOneAndDelete({_id: id});
     return contato;
 }
 
