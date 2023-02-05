@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended: true})); // Vai dar condição para o req.
 app.use(express.json());
 // Conteúdo static
 
-app.use(express.static(path.resolve(__dirname, 'public'))); // arquivos státicos e que podem ser acessados diretamente (img, css, js)
+app.use(express.static(path.resolve(__dirname, 'public'))); // arquivos státicos e que podem ser acessados diretamente (img, css, js) 
 
 // .....
  

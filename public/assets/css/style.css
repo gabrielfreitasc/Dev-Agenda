@@ -43,6 +43,7 @@ nav {
     margin: 0px 20px;
 }
 
+
 .navbar svg:hover {
     transition: .15s all ease;
     transform: scale(1.1);
@@ -81,7 +82,14 @@ nav {
     font-size: 20px;
     font-family: "Montserrat";
     font-weight: 500;
-    color: white
+    color: white;
+
+    position: relative;
+    left: -18px;
+}
+
+.tag-navbar-icon {
+    width: 230px;
 }
 
 .navbar-item a{
@@ -175,8 +183,8 @@ nav {
 
 .edit_contact svg{
     margin-left: 8px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 /*Page Login*/
@@ -321,7 +329,9 @@ nav {
 
 .logged-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
     width: 100%;
     height: 100%;
 }
@@ -340,18 +350,89 @@ nav {
     font-size: 25px;
 }
 
-.perfil-container img {
-    filter: drop-shadow(8px 8px 10px #000000d9);
+
+/*Page Contatos*/
+
+.form-contatos {
+    display: flex;
+    width: 100%;
+    height: 100vh;
 }
 
-.image-right {
-    margin-top: 35px;
+.form-contatos input {
+    border: 2px solid #91919296;
+    background: #bfc0c2;
+    font-size: 20px;
 }
 
-.image-right img {
-    width: 500px;
-    height: 500px;
-    filter: drop-shadow(8px 8px 10px #000000d9);
+.form-contatos input:focus {
+    outline: none;
+    background: #afafaf;
+}
+
+.list-contato {
+    width: 50%;
+    padding: 30px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 20px;
+    color:#212529;
+}
+
+.list-contato li {
+    display: flex;
+    margin-right: 100px;
+    margin-top: 15px;
+    position: relative;
+    margin-left: 70px;
+    top: -30px;
+}
+
+.list-contato input {   
+    height: 40px;
+    width: 40vw;
+    position: relative;
+    left: -50px;
+    padding: 10px;
+} 
+
+.inputs {
+    padding: 0;
+    margin-top: 30px;
+}
+
+.button-contato {
+    justify-content: center;
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid #0e0d0d;
+    font-size: 20px;
+    padding: 10px;
+
+    width: 20vw;
+
+    position: relative;
+    left: 70px;
+    top: 10px;
+    transition: .15s all ease;
+}
+
+.button-contato:hover {
+    background: #0e0d0d9a;
+    border: white;
+    transition: .30s all ease;
+    transform: translateY(-5px);
+}
+
+
+
+.form-contatos img {
+    position: relative;
+    top: -30px;
 }
 
 /*Page 404*/
@@ -422,4 +503,8 @@ nav {
     margin-bottom: 10px;
     background: rgba(145, 255, 0, 0.815);
     color: rgb(20, 121, 7);
+}
+
+.empty_contacts {
+    margin-left: 55px;
 }

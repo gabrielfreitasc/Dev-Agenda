@@ -1,0 +1,291 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+  <div class="index">
+    <div class="main-container">
+      <h1 class="title-container">Contatos</h1>
+      <p class="sub-title">Cadastre seus contatos abaixo</p>
+
+      <%- include('includes/messages') %>
+      
+        <% if(contato._id) { %>
+          <form action="/contato/edit/<%= contato._id %>" method="POST" class="form-contatos">
+        <% } else { %>
+          <form action="/contato/register" method="POST" class="form-contatos">
+        <% } %>
+          <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+            <ul class="list-contato">
+                <li>Nome Completo</li>
+                <li class="tel">Telefone</li>
+                <li class="email">E-mail</li>
+                <li class="work">Trabalho</li>
+            </ul>
+            <ul class="list-contato inputs">
+                <input value="<%= contato.name %>" type="text" name="name">
+                <input value="<%= contato.number %>" type="tel" name="number">
+                <input value="<%= contato.email %>" type="email" name="email">
+                <input value="<%= contato.work %>" type="text" name="work">
+
+                <button type="submit" class="button-contato">Cadastrar</button> 
+            </ul>
+            <img class="img-contato" src="img/agendaVetor.svg" alt="Imagem de uma Agenda" width="400" height="400">
+      
+        </form> 
+
+        <div>
+        </div>
+    </div>
+  </div>
+  <!--O código abaixo representa o arquivo CSS que não esta carregando quando é enviado o id do novo contato cadastrado, não encontrei o problema,
+  porem a unica solução que consegui resolver é colocando as propriedades css dentro do próprio corpo do EJS, caso consiga resolver este problema, deixe
+  comentado abaixo e solicite um pull request no github, vou ficar muito agradecido e evitar cometer este erro novamente. Grato :)
+
+  Erro:
+  
+  -->
+  <!--Ignore o código abaixo-->
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #cecece;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+nav {
+    background: #0e0d0d;
+    width: 100vw;
+    height: 70px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 13px #0e0d0d;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 25px;
+    margin: 0px 20px;
+}
+
+
+.navbar svg:hover {
+    transition: .15s all ease;
+    transform: scale(1.1);
+}
+
+.navbar-toggler {
+    position: relative;
+    width: 200px;
+    padding: 7px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-toggler a{
+    display: flex;
+}
+
+.navbar-toggler:after {
+    content: " ";
+    position: absolute;
+    background-color: #ff7300;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.navbar-toggler:hover:after {
+    width: 100%;
+}
+
+.navbar-icon {
+    font-size: 20px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    color: white;
+
+    position: relative;
+    left: -18px;
+}
+
+.tag-navbar-icon {
+    width: 230px;
+}
+
+.navbar-item a{
+    font-size: 18px;
+    color: #ffffffce;
+    font-weight: 500;
+    position: relative;
+    left: -20px;
+}
+
+.navbar-item a:hover  {
+        transition-delay: 0.3s all ease;
+        color: #ffffff;
+}
+
+.navbar-item a:after {
+    content: " ";
+    position: absolute;
+    background-color: #ff7300;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -8px;
+    transition: 0.3s;
+}
+
+.navbar-item a:hover:after {
+    width: 100%;
+}
+
+.main-container {
+    margin-top: 40px;
+    height: calc(100vh - 70px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-container {
+    font-size: 50px;
+}
+
+.sub-title {
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 50px
+}
+
+  .form-contatos {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.form-contatos input {
+    border: 2px solid #91919296;
+    background: #bfc0c2;
+    font-size: 20px;
+}
+
+.form-contatos input:focus {
+    outline: none;
+    background: #afafaf;
+}
+
+.list-contato {
+    width: 50%;
+    padding: 30px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 20px;
+    color:#212529;
+}
+
+.list-contato li {
+    display: flex;
+    margin-right: 100px;
+    margin-top: 15px;
+    position: relative;
+    margin-left: 70px;
+    top: -30px;
+}
+
+.list-contato input {   
+    height: 40px;
+    width: 40vw;
+    position: relative;
+    left: -50px;
+} 
+
+.inputs {
+    padding: 0;
+    margin-top: 30px;
+}
+
+.button-contato {
+    justify-content: center;
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid #0e0d0d;
+    font-size: 20px;
+    padding: 10px;
+
+    width: 20vw;
+
+    position: relative;
+    left: 70px;
+    top: 10px;
+    transition: .15s all ease;
+}
+
+.button-contato:hover {
+    background: #0e0d0d9a;
+    border: white;
+    transition: .30s all ease;
+    transform: translateY(-5px);
+}
+
+
+
+.form-contatos img {
+    position: relative;
+    top: -30px;
+}
+
+.row-alerts {
+    margin-bottom: 20px;
+}
+
+.alert {
+    width: 40vw;
+    padding: 20px;
+    border-radius: 7px;     
+}
+
+.alert-danger {
+    background: rgba(250, 94, 128, 0.815);
+    color: rgb(121, 7, 32);
+}
+
+.alert-success {
+    background: rgba(145, 255, 0, 0.815);
+    color: rgb(20, 121, 7);
+}
+  </style>
+
+  <!--Ignore o código acima-->
+<%- include('includes/footer') %>

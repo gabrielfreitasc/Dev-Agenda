@@ -5,6 +5,19 @@ exports.middlewareGlobal = (req, res, next) => {
     next();
 };
 
+// Middleware que checa se há um user na session (somente usuário podem add contatos)
+exports.loginRequired = (req, res, next) => {
+    if(!req.session.user) {
+        req.flash('errors', "Você precisa fazer login.");
+        req.session.save(() => res.redirect('/'));
+        return;
+    }
+
+    next();
+}
+
+// .....
+
 exports.checkCsrfError = (err, req, res, next) => {
     if(err) {
         return res.send("404"); // aqui renderiza-se uma página 404

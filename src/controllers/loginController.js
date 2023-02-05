@@ -20,14 +20,14 @@ exports.register = async function(req, res) {
             req.flash('errors', login.errors);
             // Quando der error, deve-se voltar pra página de registro novamente, para isso é necessáiro salvar a sessão
             req.session.save(function() {
-                return res.redirect('/login');
+                return res.redirect('/');
             });
             return;
         }
 
         req.flash('success', "Seu usuário foi criado com sucesso!");
         req.session.save(function() {
-            res.redirect('/login');
+            res.redirect('/');
         });
     } catch (e) {
         console.log(e);
