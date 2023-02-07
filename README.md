@@ -16,6 +16,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Json
 - Bibliotecas (Express, nodemon, webpack, bcryptjs, validator, helmet, csrf, babel)
 - MongoDB
+- Google Cloud
 
 ## 💻 Projeto
 
